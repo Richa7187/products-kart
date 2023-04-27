@@ -38,7 +38,7 @@
 .FinalBill {
   position: fixed;
   bottom: 0px;
-  width: 18%;
+  width: 22%;
 }
 
 .FinalBill p:not(:last-of-type) {
