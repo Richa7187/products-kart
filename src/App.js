@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import SideBar from './SideBar/SideBar';
+import MyOrder from './MyOrder/MyOrder';
+import ProductList from './Content/ProductList';
+import { useState } from 'react';
 
 function App() {
+const [selectedProduct, setSelectedProduct] = useState([]);
+
+const handleSelectedProduct = (product) => {
+  const productPresent = selectedProduct.findIndex((i) => i.id == product.id);
+  if (productPresent === -1){
+    setSelectedProduct([...selectedProduct,{...product, quantity:1}]);
+  }else{
+    const allProducts = [...selectedProduct];
+    allProducts[productPresent].quantity++;
+    setSelectedProduct([...selectedProduct]);
+  }
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='SideBarWrapper'>
+      <SideBar></SideBar>
+      </div>
+      <div className='ContentWrapper'>
+      <ProductList selectedProduct={handleSelectedProduct}></ProductList>
+      </div>
+      <div className='MyOrderWrapper'>
+      <MyOrder selectedProduct={selectedProduct}></MyOrder>
+      </div>
     </div>
   );
 }

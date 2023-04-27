@@ -1,0 +1,27 @@
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f8f9fd;
+  justify-content: space-around;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.productList::-webkit-scrollbar {
+  display: none;
+}
+
+.productCard {
+  background-color: white;
+  flex-basis: 20%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+  border-radius: 5%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.productCard p {
+  color: #da9394;
+}

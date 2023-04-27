@@ -1,0 +1,49 @@
+.MyOrder {
+  max-height: 75vh;
+  overflow-y: auto;
+}
+.orderCard {
+  display: flex;
+  background-color: #f8f9fd;
+  margin: 20px;
+  border-radius: 5%;
+}
+.orderCard img {
+  padding: 10px 0 10px 10px;
+  margin-right: 10px;
+}
+.price {
+  display: flex;
+}
+.quantity {
+  display: inline-block;
+  align-self: center;
+  margin-left: 20px;
+}
+.quantity button:first-of-type {
+  background-color: #f8f9fd;
+  color: grey;
+  border-color: grey;
+  border-radius: 25%;
+  margin-right: 10px;
+}
+.quantity button:last-of-type {
+  background-color: red;
+  color: white;
+  border-color: transparent;
+  border-radius: 25%;
+  margin-left: 10px;
+}
+
+.FinalBill {
+  position: fixed;
+  bottom: 0px;
+  width: 18%;
+}
+
+.FinalBill p:not(:last-of-type) {
+  color: grey;
+}
+.FinalBill p span {
+  float: right;
+}
